@@ -4,6 +4,6 @@ const alimentos = require('../controladores/alimentos_controller')
 
 const alimento = Router();
 
-alimento.get("/gym/alimentos", alimentos.buscarAlimento); //  GET apenas para TESTE - mudar para POST
+alimento.post("/gym/alimentos", alimentos.buscarAlimento); //  GET apenas para TESTE - mudar para POST
 
 module.exports = alimento;

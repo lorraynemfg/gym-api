@@ -4,9 +4,9 @@ const { q, translate } = require('../config/api_alimentos')
 
 module.exports = {
     buscarAlimento: async (req, res) => {
-        const {params}= req.body
+        const {alimento}= req.body
       try {
-        const response = await axios.request(q('manga'));
+        const response = await axios.request(q(alimento));
         const onlyRecipes = response.data.hits;
     
         const onlyProtein = onlyRecipes.filter((i) => {
