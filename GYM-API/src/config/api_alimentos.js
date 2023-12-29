@@ -24,6 +24,7 @@ const q = (params)=>{
     };
     return options
 }
+
 const translate = async (word)=>{
     const encodedParams = new URLSearchParams();
     encodedParams.set('from', 'auto');
@@ -44,41 +45,4 @@ const translate = async (word)=>{
       return translated.data.trans
 }
 
-const test = async (req, res) => {
-    const {params}= req.body
-
-  try {
-    const response = await axios.request(q(params));
-    const onlyRecipes = response.data.hits;
-
-    const onlyProtein = onlyRecipes.filter((i) => {
-      return i.recipe.totalNutrients.PROCNT.quantity <= 25;
-    });
-
- const onlyRecipeNames = await Promise.all(
-    onlyProtein.map(async (i) => {
-      const title = await translate(i.recipe.label);
-      const ingre = await translate(i.recipe.ingredientLines);
-
-      return {
-        title,
-        ingredientLines: ingre.split(','),
-        MACRO_NUTRIENTS: {
-          PROCNT: i.recipe.totalNutrients.PROCNT.quantity,
-          CHOCDF: i.recipe.totalNutrients.CHOCDF.quantity,
-          FAT: i.recipe.totalNutrients.FAT.quantity,
-          ENERC_KCAL: i.recipe.totalNutrients.ENERC_KCAL.quantity,
-        },
-        more_informations: i.recipe.shareAs
-      };
-    })
-  );
-
-  return res.json(onlyRecipeNames);
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: 'Internal Server Error' });
-  }
-};
-
-module.exports = test;
+module.exports = {q, translate}
