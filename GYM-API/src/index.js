@@ -1,7 +1,10 @@
-// require("dotenv").config();
+require("dotenv").config();
 const express = require("express");
-const routes = require("./rotas/rotas");
 const cors = require("cors");
+
+const routes = require("./rotas/rotas");
+
+const port = process.env.PORT || process.env.PORT_LOCAL
 
 const app = express();
 app.use(express.json())
@@ -9,4 +12,4 @@ app.use(cors({origin:'*'}));
 
 app.use(routes);
 
-app.listen(3001);
+app.listen(port);
