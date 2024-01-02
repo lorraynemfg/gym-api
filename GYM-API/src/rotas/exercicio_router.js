@@ -1,9 +1,8 @@
 const { Router } = require("express");
-
-// fazer os controllers
+const exercicios = require("../controladores/exercicios_controller")
 
 const exercicio = Router();
 
-exercicio.get("/gym/exercicio", (req, res )=>{}); //  Implementar controller
+exercicio.get("/gym/exercicio/:name", exercicios)
 
 module.exports = exercicio;

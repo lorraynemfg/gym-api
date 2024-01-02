@@ -1,8 +1,6 @@
 const { Router } = require("express");
 
-
 // fazer os controllers
-
 
 const calculo = Router();
 

@@ -4,13 +4,13 @@ const { q, translate } = require('../config/api_alimentos')
 
 module.exports = {
     buscarAlimento: async (req, res) => {
-        const {alimento}= req.body
+        const {alimento, qnt_min, qnt_max}= req.body
       try {
         const response = await axios.request(q(alimento));
         const onlyRecipes = response.data.hits;
     
         const onlyProtein = onlyRecipes.filter((i) => {
-          return i.recipe.totalNutrients.PROCNT.quantity <= 25;
+          return i.recipe.totalNutrients.PROCNT.quantity <= Number(qnt_max) && i.recipe.totalNutrients.PROCNT.quantity >= Number(qnt_min)-5 ;
         });
     
      const onlyRecipeNames = await Promise.all(
@@ -31,10 +31,11 @@ module.exports = {
           };
         })
       );
-    
+        onlyRecipeNames.unshift(onlyRecipeNames.length)
+        
       return res.json(onlyRecipeNames);
       } catch (error) {
-        console.error(error);
+      
         res.status(500).json({ error: 'Internal Server Error' });
       }
     }
