@@ -7,6 +7,12 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+// DESCOMENTE CASO FOR USAR O BD POSGRES
+// datasource db {
+//   provider = "postgresql"
+//   url      = env("POSTEGRES_URL")
+// }
+
 model Alimento {
   id                       Int                        @id @default(autoincrement())
   name                     String @unique
