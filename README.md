@@ -1,3 +1,28 @@
-# gym-api![Captura de ecrã de 2024-01-05 19-55-31](https://github.com/M-Robot35/gym-api/assets/96987684/e963a4ca-e27f-4572-874a-2565039b8503)
+# COMANDOS 
+    npn run start = inicia o app para produção
+    npm run dev  =  inicia área de desenvolvimento TS
+    npm run compile =  compila o codigo em typescript em javascritp
+    npm run studio  =  cria um servidor prisma com os dados do banco de dados
+    npm run migrate  = faz o scrap do site com populando as tabelas do banco de dados
 
-![Captura de ecrã de 2024-01-05 19-54-05](https://github.com/M-Robot35/gym-api/assets/96987684/54bba0e4-5473-4d23-92e1-6f76c8301e40)
+# COMANDOS PARA INICIAR
+    npm intall
+    npm run compile
+    npm run dev | start
+
+
+# Banco de dados Prisma   
+    sqlite já com os dados
+    sqlit  podendo usar o Postgres
+
+
+# gym-api
+
+<!-- ROTAS -->
+
+# [ POST ] /gym/alimentos
+
+    exemplo:    
+    {
+        "alimento":"manga"
+    }
