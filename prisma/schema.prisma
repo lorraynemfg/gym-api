@@ -1,0 +1,48 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Alimento {
+  id                       Int                        @id @default(autoincrement())
+  name                     String @unique
+  categoria                String
+  imagem                   String
+  tempo_preparo            String
+  rendimento               String
+  gramas_por_porcao        String
+  Informacoes_nutricionais Informacoes_nutricionais[]
+  Ingradientes             Ingradientes[]
+
+  @@map("alimentos")
+}
+
+model Ingradientes {
+  id           Int      @id @default(autoincrement())
+  ingradientes String
+  preparo      String?
+  alimento_id  Int
+  alimento     Alimento @relation(fields: [alimento_id], references: [id])
+
+  @@map("ingradientes")
+}
+
+model Informacoes_nutricionais {
+  id                 Int      @id @default(autoincrement())
+  calorias           String
+  carboidratos       String
+  proteinas          String
+  gorduras_totais    String
+  gorduras_saturadas String
+  gorduras_trans     String
+  fibras             String
+  sodio              String
+  informacoes_id     Int
+  informacoes        Alimento @relation(fields: [informacoes_id], references: [id])
+
+  @@map("Informacoes_nutricionais")
+}
