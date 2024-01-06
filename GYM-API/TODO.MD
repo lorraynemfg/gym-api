@@ -43,3 +43,31 @@ const informacoes_nutricionais =  document.querySelectorAll(".informacoes-nutric
         sodio: "99,00"
     }
 }
+
+
+{
+  nome: 'Arroz com legumes de micro-ondas',
+  imagem: 'https://vitat.com.br/receitas/images/recipeshandler.jpg?id=1259&tipo=r&default=s&ims=fit-in/414x275/filters:quality(60)',
+  tempo_preparo: '15 minutos',, errors: 0 (0.00%)
+  rendimento: '5 porçoes', (@ 0.36 pages/second)
+  gramas_por_porcao: '173 g',3% memory
+  ingradientes: [
+    '2,0 xícaras (chádeÁgua',br/receitas/1260-batata-recheada-no-micro-ondas
+    'Sal refinado gosto',com.br/receitas/1259-arroz-com-legumes-de-micro-ondas
+    'Pimenta-do-reino em pgosto',
+    '1,0 xícara (chádeArroz integral cru',
+    '100,0 gramas deQueijo Muçarela Light',
+    '0,5 latas deSeleta de legumes Qualit'
+  ],
+  preparo: '* Em um recipiente próprio para micro-ondas, coloque o arroz, a água, sal e pimenta do reino a gosto.* Logo após leve ao micro-ondas em potência alta por 9 minutos.* Retire o recipiente e adicione a seleta de legumes e a mussarela cortada em cubos pequenos.*Retorne ao micro-ondas por mais 3 minutos.*Sirva em seguida.',
+  informacoes_nutricionais: [
+    'Calorias 200,94 kcal',
+    'Carboidratos 31,49 g',
+    'Proteínas 8,77 g',
+    'Gorduras Totais 4,30 g',
+    'Gord. Saturadas 1,68 g',
+    'Gord. Trans 0,00 g',
+    'Fibras 2,38 g',
+    'Sódio 242,92 mg'
+  ]
+}

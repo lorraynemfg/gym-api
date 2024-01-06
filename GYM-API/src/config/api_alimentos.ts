@@ -1,6 +1,6 @@
-const axios = require('axios');
+import axios from 'axios';
 
-const q = (params)=>{
+export const q = (params:string)=>{
     const options = {
       method: 'GET',
       url: 'https://edamam-recipe-search.p.rapidapi.com/api/recipes/v2',
@@ -25,7 +25,7 @@ const q = (params)=>{
     return options
 }
 
-const translate = async (word)=>{
+export const translate = async (word:string)=>{
     const encodedParams = new URLSearchParams();
     encodedParams.set('from', 'auto');
     encodedParams.set('to', 'pt');
@@ -44,5 +44,3 @@ const translate = async (word)=>{
       const translated = await axios.request(response);
       return translated.data.trans
 }
-
-module.exports = {q, translate}

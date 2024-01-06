@@ -1,5 +1,8 @@
-module.exports = {
-    validAlimentos : ( req, res, next )=>{
+import {Request, Response, NextFunction} from 'express'
+
+
+const validation = {
+    validAlimentos : ( req:Request, res:Response, next:NextFunction )=>{
         const {alimento, qnt_min, qnt_max}= req.body
 
         if(alimento.trim() ===''){
@@ -12,3 +15,5 @@ module.exports = {
         return next()
     }
 }
+
+export default validation
