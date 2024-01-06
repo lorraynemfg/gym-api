@@ -16,7 +16,7 @@ const alimentosNutrientes = {
                 res.status(201).json(buscaTodos)
                 return
             }
-            res.status(400).json(buscaTodos)
+            res.status(201).json({msg:'nem um resultado'})
 
         }catch(err){
             res.status(500).json({msg: 'Server Error'})
@@ -48,7 +48,7 @@ const alimentosNutrientes = {
                 res.status(201).json(result)
                 return
             }
-            res.status(400).json({msg:'não encontrado'})
+            res.status(201).json({msg:'nem um resultado'})
 
         }catch(err){
             res.status(500).json({msg: 'Server Error'})
@@ -74,7 +74,7 @@ const alimentosNutrientes = {
                 res.status(201).json(buscaTodos)
                 return
             }
-            res.status(400).json(buscaTodos)
+            res.status(201).json({msg:'nem um resultado'})
 
         }catch(err){
             res.status(500).json({msg: 'Server Error'})
@@ -92,8 +92,5 @@ const alimentosNutrientes = {
 }
 
 export default alimentosNutrientes
-
-// buscar todos
-// procurar que contenha
 // buscar por kalorias
 // buscar por categorias
