@@ -1,3 +1,0 @@
-const muscles = ["lats", "spine", "upper back", "traps", "cardiovascular system", "pectorals", "serratus anterior", "forearms", "calves", "levator scapulae", "delts", "triceps", "biceps", "hamstrings", "quads", "adductors", "glutes", "abs", "hip flexors", "lower back", "obliques", "shoulders", "back", "quadriceps", "chest", "inner thighs", "core", "groin", "ankles", "feet", "soleus", "shins", "deltoids", "trapezius", "latissimus dorsi", "rhomboids", "rear deltoids"]
-
-module.exports = muscles
