@@ -55,5 +55,5 @@ class PgUltils {
         }
     }
 }
-_PgUltils_page = new WeakMap();
 exports.default = PgUltils;
+_PgUltils_page = new WeakMap();

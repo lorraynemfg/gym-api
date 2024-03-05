@@ -9,7 +9,7 @@ const PgWrite_1 = __importDefault(require("./PgWrite"));
 const PgScript_1 = __importDefault(require("./PgScript"));
 const configLaunch = () => {
     return {
-        headless: false, // mostrar navegador
+        headless: false,
         waitForInitialPage: true // esperar a pagina iniciar
     };
 };
@@ -34,7 +34,6 @@ class Navegador {
             await this.page.goto(site);
             return;
         }
-        console.log(`goTo() Error: link invalido : ${site}`);
         await this.closeBrowser();
     }
     async closeBrowser() {

@@ -9,6 +9,4 @@ alimentosNutri.get("/gym/nutri/all",alimentosNutrientes.all); //  GET apenas par
 alimentosNutri.get("/gym/nutri/alimento/:alimento",alimentosNutrientes.searchAlimento); //  GET apenas para TESTE - mudar para POST
 alimentosNutri.get("/gym/nutri/categoria/:categoria",alimentosNutrientes.searchCategoria); //  GET apenas para TESTE - mudar para POST
 
-export default alimentosNutri;
-
-
+export default alimentosNutri; 
